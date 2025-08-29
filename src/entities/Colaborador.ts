@@ -1,10 +1,9 @@
 import { IsDate, IsEmail, IsNotEmpty } from "class-validator";
 import { IsCPF } from "class-validator-cpf";
-import { text } from "stream/consumers";
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 
-@Entity({ name: 'colaboradores'})
+@Entity({ name: 'Colaboradores'})
 export class Colaborador{
 
     @PrimaryGeneratedColumn ()
@@ -22,7 +21,7 @@ export class Colaborador{
     @IsDate({ message: 'Data de nascimento inválida!' })
     data_nasc!: Date;
 
-    @Column ({type: 'text',name: 'telefone'})
+    @Column ({type: 'text',name: 'telefone',length: 15})
     telefone!: string;
 
     @Column ({type: 'text',unique: true})
@@ -32,6 +31,6 @@ export class Colaborador{
     @CreateDateColumn({type: 'timestamp', default: () => 'now()'})
     criado_em!: Date
     @UpdateDateColumn()
-    updatedAt!: Date;
+    atualizado_em!: Date;
 
 }

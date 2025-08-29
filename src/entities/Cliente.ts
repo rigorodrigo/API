@@ -1,10 +1,11 @@
 import { isCPF } from "brazilian-values";
 import { IsDate, IsNotEmpty } from "class-validator";
 import { IsCPF } from "class-validator-cpf";
-import { Column,Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column,Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Saca } from './Saca'
 
 
-@Entity ({name: 'clientes'})
+@Entity ({name: 'Clientes'})
 export class Cliente {
 
     @PrimaryGeneratedColumn()
@@ -28,17 +29,17 @@ export class Cliente {
     @Column ({type: 'text'})
     cep!: string;
 
-    @Column ({ type: 'text', name: 'uf'})
+    @Column ({ type: 'text', name: 'uf',length: 2})
     uf!: string;
 
     @Column ({type: 'text',name:'cidade'})
     cidade!: string;
 
-    @Column ({type: 'text',name: 'telefone'})
+    @Column ({type: 'text',name: 'telefone',length: 15})
     telefone!: string;
 
-  /*  @Column ({ type: 'int'})
-    sacas!: number;*/
+    @OneToMany (() => Saca, (saca) => saca.cliente)
+    sacas!: Saca[]; 
 
 
 }
