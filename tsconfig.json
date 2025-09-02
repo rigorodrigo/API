@@ -25,6 +25,9 @@
       ],
       "@middlewares/*": [
         "src/middlewares/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
       ]
     },
     "strict": true,
