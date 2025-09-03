@@ -9,8 +9,8 @@ export class Colaborador{
     @PrimaryGeneratedColumn ()
     id!: number;
 
-    @Column({type: 'text', name: 'nome'})
-    nome!:number
+    @Column({type: 'varchar', name: 'nome', length: 50})
+    nome!:string
 
     @Column({unique: true, type: 'varchar',length: 11,name: 'cpf'})
     @IsNotEmpty({ message: 'CPF não pode ser vazio!' })
@@ -21,7 +21,7 @@ export class Colaborador{
     @IsDate({ message: 'Data de nascimento inválida!' })
     data_nasc!: Date;
 
-    @Column ({type: 'text',name: 'telefone',length: 15})
+    @Column ({type: 'varchar',name: 'telefone',length: 15})
     telefone!: string;
 
     @Column ({type: 'text',unique: true})

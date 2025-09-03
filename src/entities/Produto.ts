@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity({name: 'produtos'})
-export class Prdouto {
+export class Produto {
 
     @PrimaryGeneratedColumn()
     id!:number;
@@ -9,7 +9,7 @@ export class Prdouto {
     @Column({type: 'text', name: 'nome'})
     nome!:number
 
-    @Column({type: 'text', name: 'tipo'})
+    @Column({type: 'varchar', name: 'tipo',length: 15})
     tipo!:number
 
     @Column({type: 'text', name: 'marca'})

@@ -18,7 +18,7 @@ export class ClienteController {
 
     static async criar (req: Request, res: Response){
         const {nome,cpf,data_nasc,cep, uf, endereco, cidade,telefone} = req.body;
-        if (!nome || !cpf|| data_nasc|| cep||  telefone) return res.status(400).json({message: 'Preencha todos os campos obrigatórios!'})
+        if (!nome || !cpf|| !data_nasc|| !cep||  !telefone) return res.status(400).json({message: 'Preencha todos os campos obrigatórios!'})
         try{
             const criado = repo.create({nome,cpf,data_nasc,cep,uf,endereco,cidade,telefone});
             await repo.save(criado);
@@ -47,7 +47,7 @@ export class ClienteController {
         cliente.telefone = telefone ?? cliente.telefone;
 
         try{
-            const salvo = repo.save(cliente);
+            const salvo =  await repo.save(cliente);
             res.json(salvo);
         }
 
