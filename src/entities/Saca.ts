@@ -11,7 +11,7 @@ export class Saca {
     @Column({type: 'float', default: 60.00})
     peso_kg!: number;
 
-    @Column({type: 'date'})
+    @Column({type: 'timestamptz'})
     data_armazenamento!: Date;
 
     @ManyToOne (() => Cliente,{nullable: false})

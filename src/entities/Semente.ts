@@ -9,7 +9,7 @@ export class Semente {
 
     @ManyToOne(() => Cultura, {nullable: false})
     @JoinColumn({name: 'cultura_id'})
-    cultura_id!: Cultura;
+    cultura!: Cultura;
 
     @Column ({type: 'float' , default: 50.00})
     peso_kg!: number;

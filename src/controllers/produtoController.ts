@@ -20,7 +20,7 @@ export class ProdutoController {
         const {nome,marca,tipo,quantidade,unid_medida} = req.body;
         if (!nome || !tipo || !marca || !quantidade || !unid_medida) return res.status(400).json({message: 'Preencha todos os campos obrigatórios!'})
         try{
-            const criado = repo.create({nome});
+            const criado = repo.create({nome,tipo,marca,quantidade,unid_medida});
             await repo.save(criado);
             res.status(201).json({ message: 'Produto cadastrado com sucesso.'});
         }
