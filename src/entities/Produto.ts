@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity({name: 'produtos'})
+@Entity({name: 'Produtos'})
 export class Produto {
 
     @PrimaryGeneratedColumn()

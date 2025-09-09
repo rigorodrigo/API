@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "t
 import { Cultura } from './Cultura'
 import { Cliente } from './Cliente'
 
-@Entity ({name: 'sacas'})
+@Entity ({name: 'Sacas'})
 export class Saca {
         
     @PrimaryGeneratedColumn()

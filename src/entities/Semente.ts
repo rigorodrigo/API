@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Cultura } from "./Cultura";
 
-@Entity({name: 'sementes'})
+@Entity({name: 'Sementes'})
 export class Semente {
 
     @PrimaryGeneratedColumn()

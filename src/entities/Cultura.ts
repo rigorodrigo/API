@@ -2,7 +2,7 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "ty
 import { Saca } from './Saca'
 import { Semente } from "./Semente";
 
-@Entity ({name: 'culturas'})
+@Entity ({name: 'Culturas'})
 export class Cultura {
 
     @PrimaryGeneratedColumn()

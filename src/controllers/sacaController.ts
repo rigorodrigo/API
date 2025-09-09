@@ -10,7 +10,7 @@ export class SacaController {
         res.json(sacas);
     }
 
-    static async buscarProduto ( req: Request, res: Response) {
+    static async buscarSaca ( req: Request, res: Response) {
         const id = Number(req.params.id);
         const saca = await repo.findOneBy({id});
         res.json(saca);
